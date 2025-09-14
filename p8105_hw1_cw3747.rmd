@@ -13,3 +13,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(moderndive)
 data("early_january_weather")
+names(early_january_weather)
+head(early_january_weather)
+str(early_january_weather)
+
+summary(early_january_weather$temp)
+summary(early_january_weather$humid)
+summary(early_january_weather$dewp)
+table(early_january_weather$origin)
