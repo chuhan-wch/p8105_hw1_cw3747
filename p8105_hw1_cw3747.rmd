@@ -21,3 +21,6 @@ summary(early_january_weather$temp)
 summary(early_january_weather$humid)
 summary(early_january_weather$dewp)
 table(early_january_weather$origin)
+
+nrow(early_january_weather)
+ncol(early_january_weather)
