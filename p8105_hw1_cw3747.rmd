@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Problem 1
 ## Description of the dataset 
+First, we use the `early_january_weather` dataset from the `moderndive` package and start by checking the variable names, structure, and basic summary statistics.
 ```{r}
 library(moderndive)
 data("early_january_weather")
@@ -31,6 +32,7 @@ The dataset early_january_weather contains 358 observations and 15 variables. Th
 The mean temperature during this period collected at Newark Airport is about 39.6°F (approximately ranging from 24°F to 58°F). 
 
 ## Figure
+We use the 'ggplot' to create a scatterplot of temperature over time, with points colored by humidity.  
 ```{r}
 library(ggplot2)
 ggplot(early_january_weather, aes(x = time_hour,
@@ -47,6 +49,7 @@ ggsave("figure of early temp in Jun.png", width = 7, height = 4)
 
 # Problem 2
 ## Data Frame
+We first create a dataframe with four different types of variables: numeric, logical, character, and factor.
 ```{r}
 x_numeric = rnorm(10)
 x_logical = x_numeric > 0
@@ -62,6 +65,7 @@ df = data.frame(
 ```
 
 ## Mean
+Before calculating, we need to pull the variable out of the dataframe.
 ```{r, error=TRUE}
 library(tidyverse)
 df %>% pull(x_numeric) %>% mean()
@@ -69,7 +73,7 @@ df %>% pull(x_logical) %>% mean()
 df %>% pull(x_char) %>% mean()
 df %>% pull(x_factor) %>% mean()
 ```
-We can see because of the non-numeric variables, the mean cannot be calculated.
+We can see because of some non-numeric variables, the mean cannot be calculated.
 ```{r}
 as.numeric(x_char)
 as.numeric(x_factor)
