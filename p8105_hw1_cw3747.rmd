@@ -62,11 +62,12 @@ df = data.frame(
 ```
 
 ## Mean
-```{r}
-mean(df$x_numeric)
-mean(df$x_logical)
-mean(df$x_char)
-mean(df$x_factor)
+```{r, error=TRUE}
+library(tidyverse)
+df %>% pull(x_numeric) %>% mean()
+df %>% pull(x_logical) %>% mean()
+df %>% pull(x_char) %>% mean()
+df %>% pull(x_factor) %>% mean()
 ```
 We can see because of the non-numeric variables, the mean cannot be calculated.
 ```{r}
