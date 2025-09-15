@@ -28,3 +28,20 @@ ncol(early_january_weather)
 The dataset early_january_weather contains 358 observations and 15 variables. The variables include identifiers of date and time (year, month, day, hour, time_hour), weather measurements (temperature temp, dew point dewp, humid, wind direction, wind speed, wind gust, pressure, precipitation, visibility), and the station of origin.
 
 The mean temperature during this period collected at Newark Airport is about 39.6°F (approximately ranging from 24°F to 58°F). 
+
+```{r}
+library(ggplot2)
+ggplot(early_january_weather, aes(x = time_hour,
+                                  y = temp,
+                                  color = humid) ) + 
+  geom_point() + 
+  labs(title = "early temperature in January",
+       x = "Time(hour)",
+       y = "Temperature(°F)",
+       color = "Humdity(%)") + 
+theme_minimal()
+ggsave("figure of early temp in Jun.png", width = 7, height = 4)
+```
+
+
+  
